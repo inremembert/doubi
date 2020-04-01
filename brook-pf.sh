@@ -68,6 +68,7 @@ check_pid(){
 	PID=$(ps -ef| grep "brook relays"| grep -v grep| grep -v ".sh"| grep -v "init.d"| grep -v "service"| awk '{print $2}')
 }
 check_new_ver(){
+	brook_new_ver = "v20200201"
 # 	if [[ "${Download_type}" == "1" ]]; then
 # 		brook_new_ver=$(v20200201)
 # 		brook_new_ver=$$(wget -qO- https://api.github.com/repos/txthinking/brook/releases| grep "tag_name"| head -n 1| awk -F ":" '{print $2}'| sed 's/\"//g;s/,//g;s/ //g')
@@ -75,9 +76,9 @@ check_new_ver(){
 # 		brook_new_ver=$(v20200201)
 # 	fi
 # 	if [[ -z ${brook_new_ver} ]]; then
-		echo -e "${Error} Brook 最新版本获取失败，请手动获取最新版本号[ https://github.com/txthinking/brook/releases ]"
-		stty erase '^H' && read -p "请输入版本号 [ 格式是日期 , 如 v20180707 ] :" brook_new_ver
-		[[ -z "${brook_new_ver}" ]] && echo "取消..." && exit 1
+# 		echo -e "${Error} Brook 最新版本获取失败，请手动获取最新版本号[ https://github.com/txthinking/brook/releases ]"
+# 		stty erase '^H' && read -p "请输入版本号 [ 格式是日期 , 如 v20180707 ] :" brook_new_ver
+# 		[[ -z "${brook_new_ver}" ]] && echo "取消..." && exit 1
 # 	else
 # 		echo -e "${Info} 检测到 Brook 最新版本为 [ ${brook_new_ver} ]"
 # 	fi
