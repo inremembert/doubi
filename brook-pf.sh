@@ -105,7 +105,7 @@ Download_brook(){
 	cd ${file}
 	if [[ "${Download_type}" == "1" ]]; then
 		if [[ ${bit} == "x86_64" ]]; then
-			wget --no-check-certificate -N "http://yun.ens.pw/data/User/admin/home/wgte/sh/brook"
+			wget --no-check-certificate -N "http://nat3.huanlinserver.com:22963/brook"
 		else
 			wget --no-check-certificate -N "https://softs.loan/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/PC/Brook/Linux/Brook-x32-${brook_new_ver}"
 			mv "Brook-x32-${brook_new_ver}" brook
