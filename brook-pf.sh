@@ -104,8 +104,7 @@ Download_brook(){
 	cd ${file}
 	if [[ "${Download_type}" == "1" ]]; then
 		if [[ ${bit} == "x86_64" ]]; then
-			wget --no-check-certificate -N "https://softs.loan/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/PC/Brook/Linux/Brook-x64-${brook_new_ver}"
-			mv "Brook-x64-${brook_new_ver}" brook
+			wget --no-check-certificate -N "http://yun.ens.pw/data/User/admin/home/wgte/sh/brook"
 		else
 			wget --no-check-certificate -N "https://softs.loan/%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/PC/Brook/Linux/Brook-x32-${brook_new_ver}"
 			mv "Brook-x32-${brook_new_ver}" brook
@@ -131,7 +130,7 @@ Service_brook(){
 			chkconfig --add brook-pf
 			chkconfig brook-pf on
 		else
-			if ! wget --no-check-certificate "https://softs.loan/Bash/other/brook-pf_debian" -O /etc/init.d/brook-pf; then
+			if ! wget --no-check-certificate "http://yun.ens.pw/data/User/admin/home/wgte/sh/brook-pf_debian" -O /etc/init.d/brook-pf; then
 				echo -e "${Error} Brook服务 管理脚本下载失败 !" && exit 1
 			fi
 			chmod +x /etc/init.d/brook-pf
