@@ -69,9 +69,10 @@ check_pid(){
 }
 check_new_ver(){
 	if [[ "${Download_type}" == "1" ]]; then
-		brook_new_ver=$(wget -qO- "https://softs.loan/?dir=%E7%A7%91%E5%AD%A6%E4%B8%8A%E7%BD%91/PC/Brook/Linux"|grep 'data-name="Brook-x64-v'|head -n 1|awk -F 'Linux/Brook-x64-' '{print $2}'|sed 's/\">//')
+		brook_new_ver=$(v20200201)
+# 		brook_new_ver=$$(wget -qO- https://api.github.com/repos/txthinking/brook/releases| grep "tag_name"| head -n 1| awk -F ":" '{print $2}'| sed 's/\"//g;s/,//g;s/ //g')
 	else
-		brook_new_ver=$(wget -qO- https://api.github.com/repos/txthinking/brook/releases| grep "tag_name"| head -n 1| awk -F ":" '{print $2}'| sed 's/\"//g;s/,//g;s/ //g')
+		brook_new_ver=$(v20200201)
 	fi
 	if [[ -z ${brook_new_ver} ]]; then
 		echo -e "${Error} Brook 最新版本获取失败，请手动获取最新版本号[ https://github.com/txthinking/brook/releases ]"
